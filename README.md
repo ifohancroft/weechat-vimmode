@@ -1,9 +1,10 @@
 # Description:
 Add vi/vim-like modes and keybindings to WeeChat.
 
+A fork of [weechat-vimode](https://github.com/GermainZ/weechat-vimode) with the name changed from vimode to vimmode as play on Vi vs Vim, as well as to avoid confusion with the original.
 
 # Download:
-weechat-vimode is available in the WeeChat scripts repo. You can install it by
+weechat-vimmode is not yet available in the WeeChat scripts repo, but you can install the original by
 running the following command:
 
     /script install vimode.py
@@ -12,17 +13,17 @@ The version on GitHub may be more recent. You can install it from the shell as
 follows:
 
     cd ~/.weechat/python/
-    wget 'https://github.com/GermainZ/weechat-vimode/raw/master/vimode.py'
+    wget 'https://github.com/ifohancroft/weechat-vimmode/raw/master/vimmode.py'
     cd autoload/
-    ln -s ../vimode.py .
+    ln -s ../vimmode.py .
 
 If you prefer to clone the git repo (allowing you to easily update it), you can
 do the following instead:
 
-    git clone 'https://github.com/GermainZ/weechat-vimode.git'
-    ln -s /path/to/git/repo/vimode.py ~/.weechat/python/autoload/vimode.py
+    git clone 'https://github.com/ifohancroft/weechat-vimmode.git'
+    ln -s /path/to/git/repo/vimmode.py ~/.weechat/python/autoload/vimmode.py
 
-If you're using Arch Linux, you can also install
+It's not (yet?) available on Arch, but you can install the original
 [weechat-vimode-git](https://aur.archlinux.org/packages/weechat-vimode-git/)
 from the AUR.
 
@@ -38,7 +39,7 @@ See the `imap_esc` and `imap_esc_timeout` options for more details.
 Three bar items are provided:
 
 * **mode_indicator**: shows the currently active mode (e.g. `NORMAL`). Has
-  various customization options (see `/fset vimode.mode_indicator`).
+  various customization options (see `/fset vimmode.mode_indicator`).
 * **vi_buffer**: shows partial commands (e.g. `df`).
 * **cmd_completion**: shows completion suggestions for `:commands` (triggered
   with `<Tab>`).
@@ -80,15 +81,15 @@ It is useful for `:<num>` commands, which will start WeeChat's cursor mode and
 take you to the appropriate line. You can then use the default key bindings to
 quote the message (`Q`, `m` and `q`).
 
-You can customize the prefix/suffix for each line: `/fset vimode.line_number`.
+You can customize the prefix/suffix for each line: `/fset vimmode.line_number`.
 
 
 # Enabling vim-like search:
 By default, pressing `/` will simply launch WeeChat's search mode.
 
-Optionally, weechat-vimode can also handle `n`/`N` presses after pressing `/`
+Optionally, weechat-vimmode can also handle `n`/`N` presses after pressing `/`
 and confirming the query. To enable this setting:
-`/set plugins.var.python.vimode.search_vim on`.
+`/set plugins.var.python.vimmode.search_vim on`.
 Note that having this setting enabled will require an extra `<Enter>` press to
 exit search mode (where only `n`/`N` are recognized and handled) and return to
 Normal mode. When in search mode, pressing `/` will start a new search.
@@ -277,7 +278,7 @@ count. This will all probably be easier to grasp after seeing a few examples:
 * version 0.5:      added: line numbers bar (disabled by default), :<num>
                     commands, C, D. Many fixes and improvements.
 * version 0.6:      added python3 support, `:imap <key_sequence> <Esc>`,
-                    `/vimode_go_to_normal` for use in user-defined key
+                    `/vimmode_go_to_normal` for use in user-defined key
                     bindings, nt/nT to scroll nicklist, support for
                     user-defined commands for copying/pasting, simple
                     tab-completion for Ex mode. Flipped J/K and gT/gt. Other
@@ -298,8 +299,8 @@ For the full change log, please check the [list of commits][1].
 Please report any issues using the [GitHub issue tracker][2]. Also feel free to
 suggest new features that you need.
 
-You can contact me on irc.freenode.net in #weechat or via a query (nickname:
-GermainZ).
+You can contact me via the email address in my profile, or on IRC at
+irc.libera.chat in #techtavern or via a query (nickname: ifohancroft).
 
-[1]: https://github.com/GermainZ/weechat-vimode/commits/master
-[2]: https://github.com/GermainZ/weechat-vimode/issues/new
+[1]: https://github.com/ifohancroft/weechat-vimmode/commits/master
+[2]: https://github.com/ifohancroft/weechat-vimmode/issues/new
